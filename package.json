@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:qa":"cross-env ENV=qa playwright test tests/herukoLogin.test.ts",
-    "test:uat":"cross-env ENV=uat playwright tests/demoBlazeLogin.test.ts",
-    "test:prod":"cross-env ENV=prod playwright test"
+    "test:qa": "cross-env ENV=qa playwright test tests/herukoLogin.test.ts",
+    "test:uat": "cross-env ENV=uat playwright tests/demoBlazeLogin.test.ts",
+    "test:prod": "cross-env ENV=prod playwright test"
   },
   "keywords": [],
   "author": "",
