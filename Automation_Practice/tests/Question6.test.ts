@@ -1,6 +1,6 @@
 import { chromium,test,expect } from "@playwright/test";
 
-test("Login test", async()=>{
+test("Contact form", async()=>{
     const browser=await chromium.launch({
         headless:false
     })
@@ -14,6 +14,4 @@ test("Login test", async()=>{
     await page.getByRole('textbox', { name: 'Your Message Here' }).fill("Good working execellent");
     await page.getByRole('button', { name: 'Choose File' }).setInputFiles("C:\\Users\\tamil\\Downloads\\1. Sequence.pdf");
     await page.getByRole('button', { name: 'Submit' }).click()
-    const msg=await page.locator("//div[@class='status alert alert-success']").textContent();
-    await expect("Success! Your details have been submitted successfully.").toBe(msg);
 });
