@@ -142,3 +142,26 @@ test("tabs",async({page,context})=>{
         console.log("Title: ",await p.title());
     }
 })
+test("Iterate window attribute",async({page,context})=>{
+    await page.goto("https://demoqa.com/browser-windows");
+    const [newTabe] = await Promise.all([
+        context.waitForEvent("page"),
+        page.locator("#tabButton").click()
+    ]);
+
+    await newTabe.waitForLoadState("domcontentloaded")
+
+    const pages = context.pages();
+
+    console.log(`Total Pages Opened: ${pages.length}`);
+
+    for(const p of pages){
+        console.log("URL: ", p.url());
+
+        if(p.url().includes("simple")){
+            const text = await p.locator("simpleHeading").textContent();
+
+            console.log("Simple Page heading: ", text)
+        }
+    }
+})
