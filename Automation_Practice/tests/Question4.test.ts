@@ -8,6 +8,7 @@ test("Login and logout", async()=>{
     const page=await context.newPage();
     await page.goto("https://automationexercise.com/");
     await page.getByRole('link', { name: ' Signup / Login' }).click();
+    await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').clear()
     await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').fill("tamilkumar0027@gmail.com")
     await page.getByRole('textbox', { name: 'Password' }).fill("Kiot1234");
     await page.getByRole('button', { name: 'Login' }).click();
