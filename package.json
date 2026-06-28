@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:qa": "cross-env ENV=qa playwright test tests/herukoLogin.test.ts",
-    "test:uat": "cross-env ENV=uat playwright tests/demoBlazeLogin.test.ts",
-    "test:prod": "cross-env ENV=prod playwright test"
+    "test:qa": "cross-env ENV=qa playwright test"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +12,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "@types/node": "^26.0.0",
+    "@types/node": "^26.0.1",
     "allure-playwright": "^3.10.1",
-    "cross-env": "^10.1.0"
+    "cross-env": "^10.1.0",
+    "ts-node": "^10.9.2"
   },
   "dependencies": {
     "dotenv": "^17.4.2"

@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const test_1 = require("@playwright/test");
+(async () => {
+    const browser = await test_1.chromium.launch({
+        headless: false
+    });
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.goto("https://www.google.com/");
+    await browser.close();
+})();

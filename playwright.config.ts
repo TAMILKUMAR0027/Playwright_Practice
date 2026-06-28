@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 
 // Read ENV variable
-const envName = process.env.ENV || 'qa';
+const envName = process.env.ENV || 'uat';
 
 // Load corresponding .env file
 dotenv.config({
@@ -14,10 +14,8 @@ export default defineConfig({
 
   // Parallel Execution
   fullyParallel: true,
-
   // CI Settings
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
 
   // Reports
@@ -42,7 +40,7 @@ export default defineConfig({
 
     video: 'retain-on-failure',
 
-    trace: 'on-first-retry',
+    trace: 'on',
   },
 
   projects: [
