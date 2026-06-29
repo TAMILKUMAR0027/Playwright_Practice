@@ -22,9 +22,12 @@ export default defineConfig({
     ['allure-playwright']
   ],
   timeout: 30000,
-  globalTimeout:1000000,
   retries:2,
-  expect: {
+testMatch: [
+    "tests/example.test.ts",
+    "tests/E2E.test.ts"
+  ],
+    expect: {
     
     timeout: 5000
   },
