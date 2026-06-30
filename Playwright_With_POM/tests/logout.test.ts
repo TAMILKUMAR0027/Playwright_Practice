@@ -5,11 +5,10 @@ test.describe("Dashboard tests",() =>{
         await lp.navigate()
         await lp.login(loginData.validUser.username,loginData.validUser.password);
     })
-    test("Quick launch",async({dp})=>{
-        await expect(dp.quickLaunch).toHaveText("Quick Launch");
-    })
-    test("Time at work @smoke",async({dp})=>{
-        await expect(dp.timeatwork).toHaveText("Time at Work");
+    test("logout test",async({hp,lp})=>{
+        await hp.clickUser()
+        await hp.clickLogout()
+        await expect(lp.loginTitle).toHaveText("Login")
     })
     test.afterEach(async ({},testInfo) => {
     console.log("Test completed");

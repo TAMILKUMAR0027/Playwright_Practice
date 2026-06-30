@@ -1,8 +1,5 @@
-
 import {test,expect} from '../fixtures/baseFixtures';
-
-import loginData from '../test-data/loginData.json'
-
+import loginData from '../test-data/loginData.json';
 test.describe("Login tests",()=>{
     test.beforeEach(async ({lp})=>{
         await lp.navigate();

@@ -28,7 +28,8 @@ export default defineConfig({
   // Reporter
   reporter: [
     ['list'],
-    ['html', { open: 'never' }]
+    ['html'],
+    ['allure-playwright']
   ],
 
   // Shared settings
