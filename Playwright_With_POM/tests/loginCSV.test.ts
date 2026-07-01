@@ -1,8 +1,8 @@
 import {test,expect}from '../fixtures/baseFixtures'
 import { readLoginData, LoginUser } from '../utils/csvReader'
 const users: LoginUser[]=readLoginData();
-const validData=users.find(user=>user.type==='Valid');
-const InvalidData=users.find(user=>user.type==='Invalid');
+const validData=users.find(user=>user.type==='Valid')!;
+const InvalidData=users.find(user=>user.type==='Invalid')!;
 test.describe("Login test using csv",()=>{
     test.beforeEach(async({lp})=>{
         await lp.navigate();

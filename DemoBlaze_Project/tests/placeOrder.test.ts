@@ -6,7 +6,6 @@ const filePath = path.resolve(__dirname, "../test-data/orderData.xlsx");
 
 const users:LoginUser[]=readLoginData();
 const validData=users.find(user=>user.type=="valid")!;
-const invalidData=users.find(user=>user.type=='invalid')!;
 const excelData: any = readExcel(filePath, "Sheet1");
 const data = excelData[0];
 

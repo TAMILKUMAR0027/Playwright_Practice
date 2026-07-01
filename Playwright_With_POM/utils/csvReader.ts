@@ -13,5 +13,5 @@ export function readLoginData(): LoginUser[] {
         columns: true,
         skip_empty_lines: true,
         trim: true,
-    }) as LoginUser[];
+ }) as LoginUser[];
 }
